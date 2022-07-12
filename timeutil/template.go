@@ -1,16 +1,11 @@
-package timex
+package timeutil
 
 import (
 	"time"
 
-	"github.com/gookit/goutil/strutil"
+	"github.com/bychannel/goutils/strutil"
 )
 
-// char to Go date layout eg: "2006-01-02 15:04:05",
-//
-// More see time.stdLongMonth
-//
-// Char sheet from https://www.php.net/manual/en/datetime.format.php
 var charMap = map[byte][]byte{
 	// Year
 	'Y': []byte("2006"), // long year. eg: 1999, 2003
@@ -55,8 +50,6 @@ var charMap = map[byte][]byte{
 }
 
 // ToLayout convert chars date template to Go date layout.
-//
-// Chars see charMap
 func ToLayout(template string) string {
 	if template == "" {
 		return DefaultLayout

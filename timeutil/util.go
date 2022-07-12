@@ -1,9 +1,9 @@
-package timex
+package timeutil
 
 import (
 	"time"
 
-	"github.com/gookit/goutil/fmtutil"
+	"github.com/bychannel/goutils/fmtutil"
 )
 
 // NowUnix is short of time.Now().Unix()

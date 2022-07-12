@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/gookit/goutil/strutil"
-	"github.com/gookit/goutil/timex"
+	"github.com/gookit/goutil/timeutil"
 	"github.com/stretchr/testify/assert"
 )
 

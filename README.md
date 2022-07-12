@@ -19,7 +19,7 @@
 - [`strutil`](./strutil) string 相关操作的函数工具包. eg: bytes, check, convert, encode, format and more
 - [`sysutil`](./sysutil) system 相关操作的函数工具包. eg: sysenv, exec, user, process
 - [`testutil`](./testutil) test help 相关操作的函数工具包. eg: http test, mock ENV value
-- [`timex`](./timex) 提供增强的 time.Time 实现。添加更多常用的功能方法
+- [`timex`](./timeutil) 提供增强的 time.Time 实现。添加更多常用的功能方法
   - 例如: DayStart(), DayAfter(), DayAgo(), DateFormat() 等等
 
 ## Packages

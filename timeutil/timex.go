@@ -1,17 +1,12 @@
-// Package timex provides an enhanced time.Time implementation.
-// Add more commonly used functional methods.
-//
-// such as: DayStart(), DayAfter(), DayAgo(), DateFormat() and more.
-package timex
+package timeutil
 
 import (
 	"time"
 
-	"github.com/gookit/goutil/fmtutil"
-	"github.com/gookit/goutil/strutil"
+	"github.com/bychannel/goutils/fmtutil"
+	"github.com/bychannel/goutils/strutil"
 )
 
-// provide some commonly time consts
 const (
 	OneMinSec  = 60
 	OneHourSec = 3600
@@ -24,10 +19,7 @@ const (
 	OneWeek = 7 * 24 * time.Hour
 )
 
-var (
-	// DefaultLayout template for format time
-	DefaultLayout = "2006-01-02 15:04:05"
-)
+var DefaultLayout = "2006-01-02 15:04:05"
 
 // TimeX struct
 type TimeX struct {
@@ -47,16 +39,6 @@ func Now() *TimeX {
 
 // New instance form given time
 func New(t time.Time) *TimeX {
-	return &TimeX{Time: t, Layout: DefaultLayout}
-}
-
-// Wrap the go time instance. alias of the New()
-func Wrap(t time.Time) *TimeX {
-	return &TimeX{Time: t, Layout: DefaultLayout}
-}
-
-// FromTime new instance form given time.Time. alias of the New()
-func FromTime(t time.Time) *TimeX {
 	return &TimeX{Time: t, Layout: DefaultLayout}
 }
 
@@ -243,7 +225,7 @@ func (t *TimeX) CustomHMS(hour, min, sec int) *TimeX {
 	y, m, d := t.Date()
 	newTime := time.Date(y, m, d, hour, min, sec, int(time.Second-time.Nanosecond), t.Location())
 
-	return FromTime(newTime)
+	return New(newTime)
 }
 
 // IsBefore the given time
