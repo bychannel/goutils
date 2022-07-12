@@ -3,7 +3,7 @@ package errorx
 import (
 	"fmt"
 
-	"github.com/gookit/goutil/mathutil"
+	"github.com/bychannel/goutils/mathutil"
 )
 
 // ErrorCoder interface
