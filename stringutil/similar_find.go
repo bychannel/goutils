@@ -1,4 +1,4 @@
-package strutil
+package stringutil
 
 // SimilarComparator definition
 // links:

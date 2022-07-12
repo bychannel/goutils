@@ -1,4 +1,4 @@
-package strutil_test
+package stringutil_test
 
 import (
 	"fmt"

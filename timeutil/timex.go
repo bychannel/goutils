@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/bychannel/goutils/fmtutil"
-	"github.com/bychannel/goutils/strutil"
+	"github.com/bychannel/goutils/stringutil"
 )
 
 const (
@@ -61,9 +61,9 @@ func FromDate(s string, template ...string) (*TimeX, error) {
 }
 
 // FromString create from datetime string.
-// see strutil.ToTime()
+// see stringutil.ToTime()
 func FromString(s string, layouts ...string) (*TimeX, error) {
-	t, err := strutil.ToTime(s, layouts...)
+	t, err := stringutil.ToTime(s, layouts...)
 	if err != nil {
 		return nil, err
 	}

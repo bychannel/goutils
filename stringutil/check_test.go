@@ -1,4 +1,4 @@
-package strutil_test
+package stringutil_test
 
 import (
 	"testing"
@@ -62,7 +62,7 @@ func TestStrPos(t *testing.T) {
 	assert.Equal(t, -1, strutil.BytePos("xyz", 'a'))
 	assert.Equal(t, 0, strutil.BytePos("xyz", 'x'))
 	assert.Equal(t, 2, strutil.BytePos("xyz", 'z'))
-	// assert.Equal(t, 2, strutil.BytePos("hi时间", '间')) // will build error
+	// assert.Equal(t, 2, stringutil.BytePos("hi时间", '间')) // will build error
 }
 
 func TestIsStartOf(t *testing.T) {

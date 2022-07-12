@@ -1,11 +1,10 @@
-package strutil_test
+package stringutil_test
 
 import (
 	"fmt"
 	"testing"
 
 	"github.com/gookit/goutil/strutil"
-	"github.com/gookit/goutil/timeutil"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -119,7 +118,7 @@ func TestByte2string(t *testing.T) {
 	s := "abc"
 	is.Equal(s, strutil.Byte2str([]byte(s)))
 	is.Equal(s, strutil.Byte2string([]byte(s)))
-	// is.Same(s, strutil.Byte2str([]byte(s)))
+	// is.Same(s, stringutil.Byte2str([]byte(s)))
 	// is.NotSame(s, string([]byte(s)))
 
 	is.Equal([]byte(s), strutil.ToBytes(s))
@@ -229,7 +228,7 @@ func TestToTime(t *testing.T) {
 }
 
 // func TestToOSArgs(t *testing.T) {
-// 	args := strutil.ToOSArgs(`./app top sub -a ddd --xx "abc
+// 	args := stringutil.ToOSArgs(`./app top sub -a ddd --xx "abc
 // def ghi"`)
 //
 // 	assert.Len(t, args, 7)

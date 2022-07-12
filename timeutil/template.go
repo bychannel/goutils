@@ -3,7 +3,7 @@ package timeutil
 import (
 	"time"
 
-	"github.com/bychannel/goutils/strutil"
+	"github.com/bychannel/goutils/stringutil"
 )
 
 var charMap = map[byte][]byte{
@@ -57,7 +57,7 @@ func ToLayout(template string) string {
 
 	// layout eg: "2006-01-02 15:04:05"
 	bts := make([]byte, 0, 24)
-	for _, c := range strutil.ToBytes(template) {
+	for _, c := range stringutil.ToBytes(template) {
 		if bs, ok := charMap[c]; ok {
 			bts = append(bts, bs...)
 		} else {
@@ -65,5 +65,5 @@ func ToLayout(template string) string {
 		}
 	}
 
-	return strutil.Byte2str(bts)
+	return stringutil.Byte2str(bts)
 }
