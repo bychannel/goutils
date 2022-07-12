@@ -1,9 +1,9 @@
 package stringutil_test
 
 import (
+	"github.com/bychannel/goutils/stringutil"
 	"testing"
 
-	"github.com/gookit/goutil/strutil"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -19,29 +19,29 @@ func TestTrim(t *testing.T) {
 		"abc,.": ",.",
 	}
 	for sample, cutSet := range tests {
-		is.Equal("abc", strutil.Trim(sample, cutSet))
+		is.Equal("abc", stringutil.Trim(sample, cutSet))
 	}
 
-	is.Equal("abc", strutil.Trim("abc,.", ".,"))
-	is.Equal("abc", strutil.Trim(", abc ,", ",", " "))
+	is.Equal("abc", stringutil.Trim("abc,.", ".,"))
+	is.Equal("abc", stringutil.Trim(", abc ,", ",", " "))
 
 	// TrimLeft
-	is.Equal("abc ", strutil.Ltrim(" abc "))
-	is.Equal("abc ", strutil.LTrim(" abc "))
-	is.Equal("abc ,", strutil.TrimLeft(", abc ,", " ,"))
-	is.Equal("abc ,", strutil.TrimLeft(", abc ,", ", "))
-	is.Equal("abc ,", strutil.TrimLeft(", abc ,", ",", " "))
-	is.Equal(" abc ,", strutil.TrimLeft(", abc ,", ","))
+	is.Equal("abc ", stringutil.Ltrim(" abc "))
+	is.Equal("abc ", stringutil.LTrim(" abc "))
+	is.Equal("abc ,", stringutil.TrimLeft(", abc ,", " ,"))
+	is.Equal("abc ,", stringutil.TrimLeft(", abc ,", ", "))
+	is.Equal("abc ,", stringutil.TrimLeft(", abc ,", ",", " "))
+	is.Equal(" abc ,", stringutil.TrimLeft(", abc ,", ","))
 
 	// TrimRight
-	is.Equal(" abc", strutil.Rtrim(" abc "))
-	is.Equal(" abc", strutil.RTrim(" abc "))
-	is.Equal(", abc", strutil.TrimRight(", abc ,", ", "))
-	is.Equal(", abc ", strutil.TrimRight(", abc ,", ","))
+	is.Equal(" abc", stringutil.Rtrim(" abc "))
+	is.Equal(" abc", stringutil.RTrim(" abc "))
+	is.Equal(", abc", stringutil.TrimRight(", abc ,", ", "))
+	is.Equal(", abc ", stringutil.TrimRight(", abc ,", ","))
 }
 
 func TestFilterEmail(t *testing.T) {
 	is := assert.New(t)
-	is.Equal("THE@inhere.com", strutil.FilterEmail("   THE@INHere.com  "))
-	is.Equal("inhere.xyz", strutil.FilterEmail("   inhere.xyz  "))
+	is.Equal("THE@inhere.com", stringutil.FilterEmail("   THE@INHere.com  "))
+	is.Equal("inhere.xyz", stringutil.FilterEmail("   inhere.xyz  "))
 }

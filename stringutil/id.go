@@ -1,10 +1,9 @@
 package stringutil
 
 import (
+	"github.com/bychannel/goutils/mathutil"
 	"strconv"
 	"time"
-
-	"github.com/gookit/goutil/mathutil"
 )
 
 // global id:

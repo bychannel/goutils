@@ -75,11 +75,10 @@ func IsAbsPath(aPath string) bool {
 
 // ImageMimeTypes refer net/http package
 var ImageMimeTypes = map[string]string{
-	"bmp": "image/bmp",
-	"gif": "image/gif",
-	"ief": "image/ief",
-	"jpg": "image/jpeg",
-	// "jpe":  "image/jpeg",
+	"bmp":  "image/bmp",
+	"gif":  "image/gif",
+	"ief":  "image/ief",
+	"jpg":  "image/jpeg",
 	"jpeg": "image/jpeg",
 	"png":  "image/png",
 	"svg":  "image/svg+xml",

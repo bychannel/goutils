@@ -1,18 +1,18 @@
 package stringutil_test
 
 import (
+	"github.com/bychannel/goutils/stringutil"
 	"testing"
 
-	"github.com/gookit/goutil/strutil"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestUpperOrLowerCase(t *testing.T) {
 	// Uppercase, Lowercase
-	assert.Equal(t, "ABC", strutil.Upper("abc"))
-	assert.Equal(t, "ABC", strutil.Uppercase("abc"))
-	assert.Equal(t, "abc", strutil.Lower("ABC"))
-	assert.Equal(t, "abc", strutil.Lowercase("ABC"))
+	assert.Equal(t, "ABC", stringutil.Upper("abc"))
+	assert.Equal(t, "ABC", stringutil.Uppercase("abc"))
+	assert.Equal(t, "abc", stringutil.Lower("ABC"))
+	assert.Equal(t, "abc", stringutil.Lowercase("ABC"))
 }
 
 func TestUpperFirst(t *testing.T) {
@@ -28,7 +28,7 @@ func TestUpperFirst(t *testing.T) {
 		{"support 中文", "Support 中文"},
 	}
 	for _, tt := range tests {
-		assert.Equal(t, tt.want, strutil.UpperFirst(tt.give))
+		assert.Equal(t, tt.want, stringutil.UpperFirst(tt.give))
 	}
 }
 
@@ -45,7 +45,7 @@ func TestLowerFirst(t *testing.T) {
 		{"Support 中文", "support 中文"},
 	}
 	for _, tt := range tests {
-		assert.Equal(t, tt.want, strutil.LowerFirst(tt.give))
+		assert.Equal(t, tt.want, stringutil.LowerFirst(tt.give))
 	}
 }
 
@@ -71,7 +71,7 @@ func TestUpperWord(t *testing.T) {
 		{"...", "..."},
 	}
 	for _, tt := range tests {
-		assert.Equal(t, tt.want, strutil.UpperWord(tt.give))
+		assert.Equal(t, tt.want, stringutil.UpperWord(tt.give))
 	}
 }
 
@@ -85,11 +85,11 @@ func TestSnakeCase(t *testing.T) {
 	}
 
 	for sample, want := range tests {
-		is.Equal(want, strutil.SnakeCase(sample))
+		is.Equal(want, stringutil.SnakeCase(sample))
 	}
 
-	is.Equal("range-price", strutil.Snake("rangePrice", "-"))
-	is.Equal("range price", strutil.SnakeCase("rangePrice", " "))
+	is.Equal("range-price", stringutil.Snake("rangePrice", "-"))
+	is.Equal("range price", stringutil.SnakeCase("rangePrice", " "))
 }
 
 func TestCamelCase(t *testing.T) {
@@ -105,14 +105,14 @@ func TestCamelCase(t *testing.T) {
 	}
 
 	for sample, want := range tests {
-		is.Equal(want, strutil.CamelCase(sample))
+		is.Equal(want, stringutil.CamelCase(sample))
 	}
 
-	is.Equal("rangePrice", strutil.Camel("range-price", "-"))
-	is.Equal("rangePrice", strutil.CamelCase("range price", " "))
-	is.Equal("中文Try", strutil.CamelCase("中文 try", " "))
+	is.Equal("rangePrice", stringutil.Camel("range-price", "-"))
+	is.Equal("rangePrice", stringutil.CamelCase("range price", " "))
+	is.Equal("中文Try", stringutil.CamelCase("中文 try", " "))
 
 	// custom sep char
-	is.Equal("rangePrice", strutil.CamelCase("range+price", "+"))
-	is.Equal("rangePrice", strutil.CamelCase("range*price", "*"))
+	is.Equal("rangePrice", stringutil.CamelCase("range+price", "+"))
+	is.Equal("rangePrice", stringutil.CamelCase("range*price", "*"))
 }

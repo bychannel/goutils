@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/gookit/goutil/fsutil/finder"
+	"github.com/bychannel/goutils/fsutil/finder"
 	"github.com/stretchr/testify/assert"
 )
 

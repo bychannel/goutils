@@ -2,9 +2,8 @@ package goutil
 
 import (
 	"fmt"
-
-	"github.com/gookit/goutil/jsonutil"
-	"github.com/gookit/goutil/stdutil"
+	"github.com/bychannel/goutils/jsonutil"
+	"github.com/bychannel/goutils/stdutil"
 )
 
 // Value alias of stdutil.Value

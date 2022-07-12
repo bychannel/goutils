@@ -4,14 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/bychannel/goutils/mathutil"
 	"reflect"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
 	"unsafe"
-
-	"github.com/gookit/goutil/mathutil"
 )
 
 var (

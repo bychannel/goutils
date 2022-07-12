@@ -4,17 +4,17 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
+	"github.com/bychannel/goutils/stringutil"
 	"math/rand"
 	"testing"
 	"time"
 
-	"github.com/gookit/goutil/strutil"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestRandomChars(t *testing.T) {
 	for i := 0; i < 10; i++ {
-		str := strutil.RandomChars(4)
+		str := stringutil.RandomChars(4)
 		fmt.Println(str)
 
 		assert.Len(t, str, 4)
@@ -23,7 +23,7 @@ func TestRandomChars(t *testing.T) {
 
 func TestRandomCharsV2(t *testing.T) {
 	for i := 0; i < 10; i++ {
-		str := strutil.RandomCharsV2(4)
+		str := stringutil.RandomCharsV2(4)
 		fmt.Println(str)
 
 		assert.Len(t, str, 4)
@@ -32,7 +32,7 @@ func TestRandomCharsV2(t *testing.T) {
 
 func TestRandomCharsV3(t *testing.T) {
 	for i := 0; i < 10; i++ {
-		str := strutil.RandomCharsV3(4)
+		str := stringutil.RandomCharsV3(4)
 		fmt.Println(str)
 
 		assert.Len(t, str, 4)
@@ -40,7 +40,7 @@ func TestRandomCharsV3(t *testing.T) {
 }
 
 func TestRandomBytes(t *testing.T) {
-	b, err := strutil.RandomBytes(3)
+	b, err := stringutil.RandomBytes(3)
 
 	// 1607400451937462000
 	tsn := time.Now().UnixNano()
@@ -58,7 +58,7 @@ func TestRandomBytes(t *testing.T) {
 }
 
 func TestRandomString(t *testing.T) {
-	s, err := strutil.RandomString(3)
+	s, err := stringutil.RandomString(3)
 
 	fmt.Println(s)
 	assert.NoError(t, err)
