@@ -1,4 +1,3 @@
-// Package stringutil provide some string,char,byte util functions
 package stringutil
 
 import (
