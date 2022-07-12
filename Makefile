@@ -1,4 +1,3 @@
-# link https://github.com/humbug/box/blob/master/Makefile
 #SHELL = /bin/sh
 .DEFAULT_GOAL := help
 # 每行命令之前必须有一个tab键。如果想用其他键，可以用内置变量.RECIPEPREFIX 声明
@@ -23,8 +22,7 @@ help:
 
   readme:     ## Generate or update README file by ./internal/gendoc
 readme:
-	go run ./internal/gendoc -o README.md
-	go run ./internal/gendoc -o README.zh-CN.md -l zh-CN
+	go run ./internal/gendoc -o README.md -l zh-CN
 
   csfix:      ## Fix code style for all files by go fmt
 csfix:

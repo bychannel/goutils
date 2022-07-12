@@ -17,16 +17,6 @@ var ErrInvalidType = errors.New("the input param type is invalid")
  * helper func for strings
  *************************************************************/
 
-// JoinStrings alias of strings.Join
-func JoinStrings(sep string, ss ...string) string {
-	return strings.Join(ss, sep)
-}
-
-// StringsJoin alias of strings.Join
-func StringsJoin(sep string, ss ...string) string {
-	return strings.Join(ss, sep)
-}
-
 // StringsToInts string slice to int slice
 func StringsToInts(ss []string) (ints []int, err error) {
 	for _, str := range ss {
@@ -38,12 +28,6 @@ func StringsToInts(ss []string) (ints []int, err error) {
 		ints = append(ints, iVal)
 	}
 	return
-}
-
-// MustToStrings convert interface{}(allow: array,slice) to []string
-func MustToStrings(arr interface{}) []string {
-	ret, _ := ToStrings(arr)
-	return ret
 }
 
 // StringsToSlice convert []string to []interface{}

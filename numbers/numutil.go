@@ -2,7 +2,6 @@ package numbers
 
 import "github.com/gookit/goutil/mathutil"
 
-//goland:noinspection GoUnusedGlobalVariable
 var (
 	// TryToString try convert intX/floatX value to string
 	TryToString   = mathutil.TryToString
