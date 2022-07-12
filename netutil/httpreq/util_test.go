@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/gookit/goutil/netutil/httpreq"
+	"github.com/bychannel/goutils/netutil/httpreq"
 	"github.com/stretchr/testify/assert"
 )
 

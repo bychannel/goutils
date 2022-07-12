@@ -3,7 +3,7 @@ package mathutil_test
 import (
 	"testing"
 
-	"github.com/gookit/goutil/mathutil"
+	"github.com/bychannel/goutils/mathutil"
 	"github.com/stretchr/testify/assert"
 )
 

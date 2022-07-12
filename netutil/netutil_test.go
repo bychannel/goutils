@@ -3,7 +3,7 @@ package netutil_test
 import (
 	"testing"
 
-	"github.com/gookit/goutil/netutil"
+	"github.com/bychannel/goutils/netutil"
 	"github.com/stretchr/testify/assert"
 )
 
