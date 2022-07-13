@@ -1,11 +1,10 @@
 package httphelper_test
 
 import (
+	"github.com/bychannel/goutils/netutil/httphelper"
+	"github.com/stretchr/testify/assert"
 	"net/http"
 	"testing"
-
-	"github.com/gookit/goutil/netutil/httphelper"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestHeaderToStringMap(t *testing.T) {

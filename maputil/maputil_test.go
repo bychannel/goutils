@@ -1,10 +1,9 @@
 package maputil_test
 
 import (
-	"testing"
-
-	"github.com/gookit/goutil/maputil"
+	"github.com/bychannel/goutils/maputil"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestMergeStringMap(t *testing.T) {

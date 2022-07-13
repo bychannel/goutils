@@ -1,4 +1,3 @@
-// Package httpctype list some common http content-type
 package httpctype
 
 const Key = "Content-Type"

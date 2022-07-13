@@ -1,13 +1,12 @@
 package httpreq_test
 
 import (
-	"testing"
-
-	"github.com/gookit/goutil/dump"
-	"github.com/gookit/goutil/jsonutil"
-	"github.com/gookit/goutil/netutil/httpctype"
-	"github.com/gookit/goutil/netutil/httpreq"
+	"encoding/json"
+	"fmt"
+	"github.com/bychannel/goutils/netutil/httpctype"
+	"github.com/bychannel/goutils/netutil/httpreq"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestHttpReq_Send(t *testing.T) {
@@ -27,9 +26,9 @@ func TestHttpReq_Send(t *testing.T) {
 	assert.False(t, httpreq.IsServerError(sc))
 
 	retMp := make(map[string]interface{})
-	err = jsonutil.DecodeReader(resp.Body, &retMp)
+	err = json.NewDecoder(resp.Body).Decode(&retMp)
 	assert.NoError(t, err)
-	dump.P(retMp)
+	fmt.Println(retMp)
 }
 
 func TestHttpReq_MustSend(t *testing.T) {

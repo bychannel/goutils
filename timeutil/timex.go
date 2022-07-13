@@ -2,9 +2,6 @@ package timeutil
 
 import (
 	"time"
-
-	"github.com/bychannel/goutils/fmtutil"
-	"github.com/bychannel/goutils/stringutil"
 )
 
 const (
@@ -54,21 +51,24 @@ func FromUnix(sec int64) *TimeX {
 
 // FromDate create from datetime string.
 func FromDate(s string, template ...string) (*TimeX, error) {
-	if len(template) > 0 && template[0] != "" {
-		return FromString(s, ToLayout(template[0]))
-	}
-	return FromString(s)
+	//if len(template) > 0 && template[0] != "" {
+	//	return FromString(s, ToLayout(template[0]))
+	//}
+	//return FromString(s)
+	return nil, nil
 }
 
 // FromString create from datetime string.
 // see stringutil.ToTime()
 func FromString(s string, layouts ...string) (*TimeX, error) {
-	t, err := stringutil.ToTime(s, layouts...)
-	if err != nil {
-		return nil, err
-	}
+	//t, err := stringutil.ToTime(s, layouts...)
+	//if err != nil {
+	//	return nil, err
+	//}
+	//
+	//return New(t), nil
 
-	return New(t), nil
+	return nil, nil
 }
 
 // LocalByName time for now
@@ -124,7 +124,8 @@ func (t *TimeX) TplFormat(template string) string {
 // DateFormat use input template format time to date.
 // see ToLayout()
 func (t *TimeX) DateFormat(template string) string {
-	return t.Format(ToLayout(template))
+	//return t.Format(ToLayout(template))
+	return ""
 }
 
 // Yesterday get day ago time for the time
@@ -251,9 +252,4 @@ func (t *TimeX) IsAfterUnix(ux int64) bool {
 // Timestamp value. alias t.Unix()
 func (t TimeX) Timestamp() int64 {
 	return t.Unix()
-}
-
-// HowLongAgo format diff time to string.
-func (t TimeX) HowLongAgo(before time.Time) string {
-	return fmtutil.HowLongAgo(t.Unix() - before.Unix())
 }

@@ -2,8 +2,6 @@ package timeutil
 
 import (
 	"time"
-
-	"github.com/bychannel/goutils/fmtutil"
 )
 
 // NowUnix is short of time.Now().Unix()
@@ -137,11 +135,6 @@ func TodayStart() time.Time {
 // TodayEnd time
 func TodayEnd() time.Time {
 	return DayEnd(time.Now())
-}
-
-// HowLongAgo format given timestamp to string.
-func HowLongAgo(sec int64) string {
-	return fmtutil.HowLongAgo(sec)
 }
 
 // ToDuration parses a duration string. such as "300ms", "-1.5h" or "2h45m".

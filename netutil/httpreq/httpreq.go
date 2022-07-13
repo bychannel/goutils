@@ -1,13 +1,11 @@
-// Package httpreq an simple http requester
 package httpreq
 
 import (
 	"bytes"
+	"github.com/bychannel/goutils/netutil/httpctype"
 	"io"
 	"net/http"
 	"strings"
-
-	"github.com/gookit/goutil/netutil/httpctype"
 )
 
 // Req an simple http requester.
