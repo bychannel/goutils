@@ -1,6 +1,6 @@
 package arrutil
 
-// IntsHas check the []int contains the given value
+// IntsHas 是否包含给定元素
 func IntsHas(ints []int, val int) bool {
 	for _, ele := range ints {
 		if ele == val {
@@ -10,7 +10,7 @@ func IntsHas(ints []int, val int) bool {
 	return false
 }
 
-// Int64sHas check the []int64 contains the given value
+// Int64sHas 是否包含给定元素
 func Int64sHas(ints []int64, val int64) bool {
 	for _, ele := range ints {
 		if ele == val {
@@ -20,7 +20,7 @@ func Int64sHas(ints []int64, val int64) bool {
 	return false
 }
 
-// StringsHas check the []string contains the given element
+// StringsHas 是否包含给定元素
 func StringsHas(ss []string, val string) bool {
 	for _, ele := range ss {
 		if ele == val {

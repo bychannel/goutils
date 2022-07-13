@@ -5,7 +5,7 @@
 - [`arrutil`](./arrutil) array/slice 相关操作的函数工具包 如：类型转换，元素检查等等
 - [`errorx`](./errorx)  为 go 提供增强的错误实现，允许带有堆栈跟踪信息和包装另一个错误。
 - [`fmtutil`](./fmtutil) 格式化数据工具函数 eg：数据size
-- [`fsutil`](./fsutil) 文件系统操作相关的工具函数包. eg: file and dir check, operate
+- [`fsutil`](./fileutil) 文件系统操作相关的工具函数包. eg: file and dir check, operate
 - [`jsonutil`](./jsonutil) 一些用于快速读取、写入、编码、解码 JSON 数据的实用函数。
 - [`maputil`](./maputil) map 相关操作的函数工具包. eg: convert, sub-value get, simple merge
 - [`mathutil`](./mathutil) int/number 相关操作的函数工具包. eg: convert, math calc, random

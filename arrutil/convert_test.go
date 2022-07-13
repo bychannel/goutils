@@ -2,10 +2,9 @@ package arrutil_test
 
 import (
 	"fmt"
-	"testing"
-
-	"github.com/gookit/goutil/arrutil"
+	"github.com/bychannel/goutils/arrutil"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestToInt64s(t *testing.T) {
@@ -13,12 +12,6 @@ func TestToInt64s(t *testing.T) {
 
 	ints, err := arrutil.ToInt64s([]string{"1", "2"})
 	is.Nil(err)
-	is.Equal("[]int64{1, 2}", fmt.Sprintf("%#v", ints))
-
-	ints = arrutil.MustToInt64s([]string{"1", "2"})
-	is.Equal("[]int64{1, 2}", fmt.Sprintf("%#v", ints))
-
-	ints = arrutil.MustToInt64s([]interface{}{"1", "2"})
 	is.Equal("[]int64{1, 2}", fmt.Sprintf("%#v", ints))
 
 	ints = arrutil.SliceToInt64s([]interface{}{"1", "2"})
@@ -35,9 +28,6 @@ func TestToStrings(t *testing.T) {
 	is.Nil(err)
 	is.Equal(`[]string{"1", "2"}`, fmt.Sprintf("%#v", ss))
 
-	ss = arrutil.SliceToStrings([]interface{}{1, 2})
-	is.Equal(`[]string{"1", "2"}`, fmt.Sprintf("%#v", ss))
-
 	as := arrutil.StringsToSlice([]string{"1", "2"})
 	is.Equal(`[]interface {}{"1", "2"}`, fmt.Sprintf("%#v", as))
 
@@ -46,24 +36,6 @@ func TestToStrings(t *testing.T) {
 
 	_, err = arrutil.ToStrings([]interface{}{[]int{1}, nil})
 	is.Error(err)
-}
-
-func TestAnyToString(t *testing.T) {
-	is := assert.New(t)
-	arr := [2]string{"a", "b"}
-
-	is.Equal("", arrutil.AnyToString(nil))
-	is.Equal("[]", arrutil.AnyToString([]string{}))
-	is.Equal("[a, b]", arrutil.AnyToString(arr))
-	is.Equal("[a, b]", arrutil.AnyToString([]string{"a", "b"}))
-	is.Equal("", arrutil.AnyToString("invalid"))
-}
-
-func TestSliceToString(t *testing.T) {
-	is := assert.New(t)
-
-	is.Equal("[]", arrutil.SliceToString(nil))
-	is.Equal("[a,b]", arrutil.SliceToString("a", "b"))
 }
 
 func TestStringsToInts(t *testing.T) {
@@ -75,10 +47,4 @@ func TestStringsToInts(t *testing.T) {
 
 	_, err = arrutil.StringsToInts([]string{"a", "b"})
 	is.Error(err)
-}
-
-func TestJoinSlice(t *testing.T) {
-	assert.Equal(t, "", arrutil.JoinSlice(","))
-	assert.Equal(t, "", arrutil.JoinSlice(",", nil))
-	assert.Equal(t, "a,23,b", arrutil.JoinSlice(",", "a", 23, "b"))
 }

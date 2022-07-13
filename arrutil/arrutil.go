@@ -1,6 +1,6 @@
 package arrutil
 
-// Reverse string slice
+// Reverse 反转字符串切片
 func Reverse(ss []string) {
 	ln := len(ss)
 	for i := 0; i < ln/2; i++ {
@@ -9,7 +9,7 @@ func Reverse(ss []string) {
 	}
 }
 
-// Remove a value form a string slice
+// Remove 从切片中移除给定的元素
 func Remove(ss []string, s string) []string {
 	ns := make([]string, 0, len(ss))
 	for _, v := range ss {

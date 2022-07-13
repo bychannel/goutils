@@ -183,8 +183,6 @@ func MustInt64(in interface{}) int64 {
 	return i64
 }
 
-// TODO StrictInt64,AsInt64 strict convert to int64
-
 // Int64OrErr convert string to int64, return error on failed
 func Int64OrErr(in interface{}) (int64, error) {
 	return ToInt64(in)

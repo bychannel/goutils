@@ -1,10 +1,9 @@
 package arrutil_test
 
 import (
-	"testing"
-
-	"github.com/gookit/goutil/arrutil"
+	"github.com/bychannel/goutils/arrutil"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestIntsHas(t *testing.T) {

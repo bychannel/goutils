@@ -2,22 +2,16 @@ package arrutil
 
 import (
 	"errors"
+	"github.com/bychannel/goutils/mathutil"
+	"github.com/bychannel/goutils/stringutil"
 	"reflect"
 	"strconv"
-	"strings"
-
-	"github.com/gookit/goutil/mathutil"
-	"github.com/gookit/goutil/strutil"
 )
 
 // ErrInvalidType error
 var ErrInvalidType = errors.New("the input param type is invalid")
 
-/*************************************************************
- * helper func for strings
- *************************************************************/
-
-// StringsToInts string slice to int slice
+// StringsToInts 字符串切片转整形切片
 func StringsToInts(ss []string) (ints []int, err error) {
 	for _, str := range ss {
 		iVal, err := strconv.Atoi(str)
@@ -30,7 +24,7 @@ func StringsToInts(ss []string) (ints []int, err error) {
 	return
 }
 
-// StringsToSlice convert []string to []interface{}
+// StringsToSlice 字符串切片转空接口切片
 func StringsToSlice(ss []string) []interface{} {
 	args := make([]interface{}, len(ss))
 	for i, s := range ss {
@@ -39,11 +33,7 @@ func StringsToSlice(ss []string) []interface{} {
 	return args
 }
 
-/*************************************************************
- * helper func for slices
- *************************************************************/
-
-// ToInt64s convert interface{}(allow: array,slice) to []int64
+// ToInt64s 切片或数组转int64切片
 func ToInt64s(arr interface{}) (ret []int64, err error) {
 	rv := reflect.ValueOf(arr)
 	if rv.Kind() != reflect.Slice && rv.Kind() != reflect.Array {
@@ -60,12 +50,6 @@ func ToInt64s(arr interface{}) (ret []int64, err error) {
 		ret = append(ret, i64)
 	}
 	return
-}
-
-// MustToInt64s convert interface{}(allow: array,slice) to []int64
-func MustToInt64s(arr interface{}) []int64 {
-	ret, _ := ToInt64s(arr)
-	return ret
 }
 
 // SliceToInt64s convert []interface{} to []int64
@@ -86,7 +70,7 @@ func ToStrings(arr interface{}) (ret []string, err error) {
 	}
 
 	for i := 0; i < rv.Len(); i++ {
-		str, err := strutil.ToString(rv.Index(i).Interface())
+		str, err := stringutil.ToString(rv.Index(i).Interface())
 		if err != nil {
 			return []string{}, err
 		}
@@ -94,59 +78,4 @@ func ToStrings(arr interface{}) (ret []string, err error) {
 		ret = append(ret, str)
 	}
 	return
-}
-
-// SliceToStrings convert []interface{} to []string
-func SliceToStrings(arr []interface{}) []string {
-	ss := make([]string, len(arr))
-	for i, v := range arr {
-		ss[i] = strutil.MustString(v)
-	}
-	return ss
-}
-
-// AnyToString simple and quickly convert any array, slice to string
-func AnyToString(arr interface{}) string {
-	return NewFormatter(arr).Format()
-}
-
-// SliceToString convert []interface{} to string
-func SliceToString(arr ...interface{}) string { return ToString(arr) }
-
-// ToString simple and quickly convert []interface{} to string
-func ToString(arr []interface{}) string {
-	// like fmt.Println([]interface{}(nil))
-	if arr == nil {
-		return "[]"
-	}
-
-	var sb strings.Builder
-	sb.WriteByte('[')
-
-	for i, v := range arr {
-		if i > 0 {
-			sb.WriteByte(',')
-		}
-		sb.WriteString(strutil.MustString(v))
-	}
-
-	sb.WriteByte(']')
-	return sb.String()
-}
-
-// JoinSlice join []any slice to string.
-func JoinSlice(sep string, arr ...interface{}) string {
-	if arr == nil {
-		return ""
-	}
-
-	var sb strings.Builder
-	for i, v := range arr {
-		if i > 0 {
-			sb.WriteString(sep)
-		}
-		sb.WriteString(strutil.MustString(v))
-	}
-
-	return sb.String()
 }
