@@ -2,9 +2,8 @@ package stdutil
 
 import (
 	"errors"
+	"github.com/bychannel/goutils/stringutil"
 	"reflect"
-
-	"github.com/gookit/goutil/strutil"
 )
 
 // ErrConvertFail error define
@@ -12,13 +11,13 @@ var ErrConvertFail = errors.New("convert value type is failure")
 
 // ToString always convert value to string, will ignore error
 func ToString(v interface{}) string {
-	s, _ := strutil.AnyToString(v, false)
+	s, _ := stringutil.AnyToString(v, false)
 	return s
 }
 
 // MustString convert value(basic type) to string, will panic on convert a complex type.
 func MustString(v interface{}) string {
-	s, err := strutil.AnyToString(v, true)
+	s, err := stringutil.AnyToString(v, true)
 	if err != nil {
 		panic(err)
 	}
@@ -27,7 +26,7 @@ func MustString(v interface{}) string {
 
 // TryString try to convert a value to string
 func TryString(v interface{}) (string, error) {
-	return strutil.AnyToString(v, true)
+	return stringutil.AnyToString(v, true)
 }
 
 // BaseTypeVal2 convert custom type or intX,uintX,floatX to generic base type.

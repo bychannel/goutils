@@ -3,8 +3,7 @@ package stdutil_test
 import (
 	"testing"
 
-	"github.com/gookit/goutil/dump"
-	"github.com/gookit/goutil/stdutil"
+	"github.com/bychannel/goutils/stdutil"
 	"github.com/stretchr/testify/assert"
 )
 

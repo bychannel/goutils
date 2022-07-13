@@ -1,10 +1,9 @@
 package stdutil_test
 
 import (
-	"testing"
-
-	"github.com/gookit/goutil/stdutil"
+	"github.com/bychannel/goutils/stdutil"
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestGetCallersInfo(t *testing.T) {

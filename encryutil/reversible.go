@@ -1,5 +1,6 @@
 package encryutil
 
+// 可逆加密算法
 // 对称算法
 // AES
 

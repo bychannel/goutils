@@ -2,12 +2,7 @@ package stdutil
 
 import (
 	"reflect"
-
-	"github.com/gookit/goutil/reflects"
 )
-
-// TODO IsEqual(s, d interface{}) bool
-// IsContains(v, sub interface{}) bool
 
 // IsNil value check
 func IsNil(v interface{}) bool {

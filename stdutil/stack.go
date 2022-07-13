@@ -39,9 +39,6 @@ func GetCallStacks(all bool) []byte {
 }
 
 // GetCallerInfo get caller func name and with base filename and line.
-//
-// returns:
-//	github.com/gookit/goutil/stdutil_test.someFunc2(),stack_test.go:26
 func GetCallerInfo(skip int) string {
 	skip++ // ignore current func
 	cs := GetCallersInfo(skip, skip+1)

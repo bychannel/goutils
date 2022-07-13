@@ -2,11 +2,11 @@ package stdutil_test
 
 import (
 	"encoding/json"
+	"github.com/bychannel/goutils/stdutil"
+	"github.com/bychannel/goutils/stringutil"
 	"testing"
 	"time"
 
-	"github.com/gookit/goutil/stdutil"
-	"github.com/gookit/goutil/strutil"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -29,7 +29,7 @@ func TestTryString(t *testing.T) {
 	assert.Equal(t, "23", s)
 
 	s, err = stdutil.TryString([]string{"a", "b"})
-	assert.ErrorIs(t, err, strutil.ErrConvertFail)
+	assert.ErrorIs(t, err, stringutil.ErrConvertFail)
 	assert.Equal(t, "", s)
 }
 

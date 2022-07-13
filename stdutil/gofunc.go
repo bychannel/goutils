@@ -1,11 +1,10 @@
 package stdutil
 
 import (
+	"github.com/bychannel/goutils/stringutil"
 	"reflect"
 	"runtime"
 	"strings"
-
-	"github.com/gookit/goutil/strutil"
 )
 
 // FullFcName struct.
@@ -27,7 +26,7 @@ func (ffn *FullFcName) Parse() {
 
 	ffn.pkgPath = ffn.FullName[:i+1]
 	// spilt get pkg and func name
-	ffn.pkgName, ffn.funcName = strutil.MustCut(ffn.FullName[i+1:], ".")
+	ffn.pkgName, ffn.funcName = stringutil.MustCut(ffn.FullName[i+1:], ".")
 
 	ffn.pkgPath += ffn.pkgName
 }
