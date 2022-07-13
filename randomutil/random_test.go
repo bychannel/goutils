@@ -1,15 +1,13 @@
-package stringutil_test
+package randomutil
 
 import (
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
-	"github.com/bychannel/goutils/stringutil"
+	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"
 	"time"
-
-	"github.com/stretchr/testify/assert"
 )
 
 func TestRandomChars(t *testing.T) {

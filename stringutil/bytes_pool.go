@@ -7,9 +7,6 @@ package stringutil
 // 	buf:=bp.Get()
 // 	defer bp.Put(buf)
 //	// use buf do something ...
-//
-// refer https://www.flysnow.org/2020/08/21/golang-chan-byte-pool.html
-// from https://github.com/minio/minio/blob/master/internal/bpool/bpool.go
 type ByteChanPool struct {
 	c    chan []byte
 	w    int
