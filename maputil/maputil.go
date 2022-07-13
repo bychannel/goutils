@@ -6,6 +6,15 @@ import (
 	"strings"
 )
 
+// GetOrDefault 获取给定key的值，如果没有则返回默认值
+func GetOrDefault(d map[string]interface{}, key string, def interface{}) interface{} {
+	val, ok := d[key]
+	if ok {
+		return val
+	}
+	return def
+}
+
 // MergeStringMap simple merge two string map. merge src to dst map
 func MergeStringMap(src, dst map[string]string, ignoreCase bool) map[string]string {
 	for k, v := range src {
