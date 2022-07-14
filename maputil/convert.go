@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-// HttpQueryString convert map[string]interface{} data to http query string.
+// HttpQueryString convert map[string]interface{} data to httputil query string.
 func HttpQueryString(data map[string]interface{}) string {
 	ss := make([]string, 0, len(data))
 	for k, v := range data {

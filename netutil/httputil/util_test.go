@@ -1,15 +1,14 @@
-package httpreq_test
+package httputil_test
 
 import (
 	"net/http"
 	"testing"
 
-	"github.com/bychannel/goutils/netutil/httpreq"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestBuildBasicAuth(t *testing.T) {
-	val := httpreq.BuildBasicAuth("inhere", "abcd&123")
+	val := http.BuildBasicAuth("inhere", "abcd&123")
 
 	assert.Contains(t, val, "Basic ")
 }
@@ -18,7 +17,7 @@ func TestAddHeadersToRequest(t *testing.T) {
 	req, err := http.NewRequest("GET", "abc.xyz", nil)
 	assert.NoError(t, err)
 
-	httpreq.AddHeadersToRequest(req, http.Header{
+	http.AddHeadersToRequest(req, http.Header{
 		"key0": []string{"val0"},
 	})
 

@@ -1,14 +1,13 @@
-package httpreq
+package httputil
 
 import (
 	"bytes"
-	"github.com/bychannel/goutils/netutil/httpctype"
 	"io"
 	"net/http"
 	"strings"
 )
 
-// Req an simple http requester.
+// Req an simple httputil requester.
 type Req struct {
 	client Doer
 	// some config for request
@@ -90,7 +89,7 @@ func (h *Req) BytesBody(bs []byte) *Req {
 // JSONBytesBody with custom bytes body, and set JSON content type
 func (h *Req) JSONBytesBody(bs []byte) *Req {
 	h.body = bytes.NewReader(bs)
-	h.ContentType(httpctype.JSON)
+	h.ContentType(JSON)
 	return h
 }
 
@@ -100,7 +99,7 @@ func (h *Req) StringBody(s string) *Req {
 	return h
 }
 
-// Client custom http client
+// Client custom httputil client
 func (h *Req) Client(c Doer) *Req {
 	h.client = c
 	return h
@@ -116,10 +115,10 @@ func (h *Req) MustSend(url string) *http.Response {
 	return resp
 }
 
-// Send request and return http response
+// Send request and return httputil response
 func (h *Req) Send(url string) (*http.Response, error) {
 	if len(h.baseURL) > 0 {
-		if !strings.HasPrefix(url, "http") {
+		if !strings.HasPrefix(url, "httputil") {
 			url = h.baseURL + url
 		} else if len(url) == 0 {
 			url = h.baseURL

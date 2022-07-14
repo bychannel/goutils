@@ -1,8 +1,8 @@
-package httpreq
+package httputil
 
 import "net/http"
 
-// Doer interface for http client.
+// Doer interface for httputil client.
 type Doer interface {
 	Do(req *http.Request) (*http.Response, error)
 }

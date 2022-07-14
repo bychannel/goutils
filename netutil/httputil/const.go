@@ -1,4 +1,4 @@
-package httpctype
+package httputil
 
 const Key = "Content-Type"
 
@@ -10,10 +10,9 @@ const (
 	Text  = "text/plain; charset=utf-8" // equals Plain
 	Plain = "text/plain; charset=utf-8"
 
-	XML2 = "text/xml; charset=utf-8"
 	XML  = "application/xml; charset=utf-8"
+	XML2 = "text/xml; charset=utf-8"
 
-	YML  = "application/x-yaml; charset=utf-8"
 	YAML = "application/x-yaml; charset=utf-8"
 
 	JSON  = "application/json; charset=utf-8"
@@ -32,4 +31,22 @@ const (
 
 	// Binary represents content type application/octet-stream
 	Binary = "application/octet-stream"
+)
+
+// Content-Type MIME of the most common data formats.
+const (
+	MIMEHTML  = "text/html"
+	MIMEText  = "text/plain" // equals MIMEPlain
+	MIMEPlain = "text/plain"
+	MIMEJSON  = "application/json"
+	MIMEXML   = "application/xml"
+	MIMEXML2  = "text/xml"
+	MIMEYAML  = "application/x-yaml"
+
+	MIMEPOSTForm      = "application/x-www-form-urlencoded"
+	MIMEMultiDataForm = "multipart/form-data"
+
+	MIMEPROTOBUF = "application/x-protobuf"
+	MIMEMSGPACK  = "application/x-msgpack"
+	MIMEMSGPACK2 = "application/msgpack"
 )
