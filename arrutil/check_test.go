@@ -13,6 +13,13 @@ func TestIntsHas(t *testing.T) {
 	assert.False(t, arrutil.IntsHas(ints, 3))
 }
 
+func TestInt32sHas(t *testing.T) {
+	ints := []int32{2, 4, 5}
+	assert.True(t, arrutil.Int32sHas(ints, 2))
+	assert.True(t, arrutil.Int32sHas(ints, 5))
+	assert.False(t, arrutil.Int32sHas(ints, 3))
+}
+
 func TestInt64sHas(t *testing.T) {
 	ints := []int64{2, 4, 5}
 	assert.True(t, arrutil.Int64sHas(ints, 2))

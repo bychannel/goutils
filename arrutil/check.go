@@ -10,6 +10,16 @@ func IntsHas(ints []int, val int) bool {
 	return false
 }
 
+// Int32sHas 是否包含给定元素
+func Int32sHas(ints []int32, val int32) bool {
+	for _, ele := range ints {
+		if ele == val {
+			return true
+		}
+	}
+	return false
+}
+
 // Int64sHas 是否包含给定元素
 func Int64sHas(ints []int64, val int64) bool {
 	for _, ele := range ints {

@@ -3,7 +3,6 @@ package arrutil
 import (
 	"errors"
 	"github.com/bychannel/goutils/mathutil"
-	"github.com/bychannel/goutils/stringutil"
 	"reflect"
 	"strconv"
 )
@@ -59,23 +58,4 @@ func SliceToInt64s(arr []interface{}) []int64 {
 		i64s[i] = mathutil.MustInt64(v)
 	}
 	return i64s
-}
-
-// ToStrings convert interface{}(allow: array,slice) to []string
-func ToStrings(arr interface{}) (ret []string, err error) {
-	rv := reflect.ValueOf(arr)
-	if rv.Kind() != reflect.Slice && rv.Kind() != reflect.Array {
-		err = ErrInvalidType
-		return
-	}
-
-	for i := 0; i < rv.Len(); i++ {
-		str, err := stringutil.ToString(rv.Index(i).Interface())
-		if err != nil {
-			return []string{}, err
-		}
-
-		ret = append(ret, str)
-	}
-	return
 }

@@ -6,16 +6,6 @@ import (
 	"testing"
 )
 
-func TestFromDate(t *testing.T) {
-	tx, err := timeutil.FromDate("2022-04-20 19:40:34")
-	assert.NoError(t, err)
-	assert.Equal(t, "2022-04-20 19:40:34", tx.Datetime())
-
-	tx, err = timeutil.FromDate("2022-04-20 19:40:34", "Y-m-d H:I:S")
-	assert.NoError(t, err)
-	assert.Equal(t, "2022-04-20 19:40:34", tx.Datetime())
-}
-
 func TestTimeX_basic(t *testing.T) {
 	tx := timeutil.Now()
 	assert.NotEmpty(t, tx.String())

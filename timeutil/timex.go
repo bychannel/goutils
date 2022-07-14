@@ -34,7 +34,7 @@ func Now() *TimeX {
 	return &TimeX{Time: time.Now(), Layout: DefaultLayout}
 }
 
-// New instance form given time
+// New 指定时间创建
 func New(t time.Time) *TimeX {
 	return &TimeX{Time: t, Layout: DefaultLayout}
 }
@@ -44,31 +44,9 @@ func Local() *TimeX {
 	return New(time.Now().In(time.Local))
 }
 
-// FromUnix create from unix time
+// FromUnix 指定unix时间戳创建
 func FromUnix(sec int64) *TimeX {
 	return New(time.Unix(sec, 0))
-}
-
-// FromDate create from datetime string.
-func FromDate(s string, template ...string) (*TimeX, error) {
-	//if len(template) > 0 && template[0] != "" {
-	//	return FromString(s, ToLayout(template[0]))
-	//}
-	//return FromString(s)
-	return nil, nil
-}
-
-// FromString create from datetime string.
-// see stringutil.ToTime()
-func FromString(s string, layouts ...string) (*TimeX, error) {
-	//t, err := stringutil.ToTime(s, layouts...)
-	//if err != nil {
-	//	return nil, err
-	//}
-	//
-	//return New(t), nil
-
-	return nil, nil
 }
 
 // LocalByName time for now
@@ -121,7 +99,7 @@ func (t *TimeX) TplFormat(template string) string {
 	return t.DateFormat(template)
 }
 
-// DateFormat use input template format time to date.
+// FormatBy use input template format time to date.
 // see ToLayout()
 func (t *TimeX) DateFormat(template string) string {
 	//return t.Format(ToLayout(template))

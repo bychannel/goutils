@@ -3,7 +3,6 @@
 * 常用工具类
 * 零依赖
 * https://github.com/imroc/biu
-* https://gitee.com/huangbosbos/go-hutool
 * https://github.com/druidcaesa/ztool
 * https://github.com/88250/gulu
 * https://github.com/ScathonLin/scago
