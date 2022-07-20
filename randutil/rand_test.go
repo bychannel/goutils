@@ -1,4 +1,4 @@
-package randomutil
+package randutil
 
 import (
 	"fmt"
@@ -7,17 +7,17 @@ import (
 	"time"
 )
 
-func TestRandomInt(t *testing.T) {
+func TestRandInt(t *testing.T) {
 	min, max := 1000, 9999
 
 	for i := 0; i < 5; i++ {
-		val := RandomInt(min, max)
+		val := RandInt(min, max)
 		fmt.Println(val)
 		assert.True(t, val >= min)
 		assert.True(t, val <= max)
 
 		seed := time.Now().UnixNano()
-		val = RandomIntWithSeed(min, max, seed)
+		val = RandIntWithSeed(min, max, seed)
 		assert.True(t, val >= min)
 	}
 }

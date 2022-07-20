@@ -32,3 +32,17 @@ func CustomHMS(hour, min, sec int) time.Time {
 	y, m, d := now.Date()
 	return time.Date(y, m, d, hour, min, sec, int(time.Second-time.Nanosecond), now.Location())
 }
+
+// IsSameDay 判断给定的两个时间是否同一天
+func IsSameDay(d1, d2 time.Time) bool {
+	// fixme
+	return false
+}
+
+// IsSameDayWithOffset 判断给定的两个时间是否同一天
+// offset为秒钟偏移值
+// 例如：需要在次日的5点刷新，offset传值为 5*3600 = 18000
+func IsSameDayWithOffset(d1, d2 time.Time, offset int32) bool {
+	// fixme
+	return false
+}

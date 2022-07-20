@@ -7,12 +7,30 @@ import (
 )
 
 // GetOrDefault 获取给定key的值，如果没有则返回默认值
-func GetOrDefault(d map[string]interface{}, key string, def interface{}) interface{} {
-	val, ok := d[key]
+func GetOrDefault(m map[string]interface{}, key string, def interface{}) interface{} {
+	val, ok := m[key]
 	if ok {
 		return val
 	}
 	return def
+}
+
+// GetOrMaxKey 从给定map中获取指定的key，如果key不存在，那就获取最大的key所对应的值
+func GetOrMaxKey(m map[int32]interface{}, key int32) interface{} {
+	// FIXME
+	return nil
+}
+
+// AddByI32Value 将集合m2加到集合m1上
+func AddByI32Value(m1, m2 map[interface{}]int32) map[interface{}]int32 {
+	// FIXME
+	return nil
+}
+
+// AddByI64Value 将集合m2加到集合m1上
+func AddByI64Value(m1, m2 map[interface{}]int64) map[interface{}]int64 {
+	// FIXME
+	return nil
 }
 
 // MergeStringMap simple merge two string map. merge src to dst map

@@ -33,3 +33,9 @@ func IsAlphaNum(c uint8) bool {
 func IsSymbol(r rune) bool {
 	return unicode.IsSymbol(r)
 }
+
+// IsEmpty 判定字符串是否为空
+func IsEmpty(s string) bool {
+	// FIXME
+	return false
+}

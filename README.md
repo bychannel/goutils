@@ -10,7 +10,7 @@
 - [`maputil`](./maputil) map 相关操作的函数工具包. eg: convert, sub-value get, simple merge
 - [`mathutil`](./mathutil) int/number 相关操作的函数工具包. eg: convert, math calc, random
 - [`netutil`](./netutil) 包装 http.Client 实现的更加易于使用的HTTP客户端
-- [`randomutil`](./randomutil) 提供随机获取元素的方法，包含多种随机策略
+- [`randomutil`](./randutil) 提供随机获取元素的方法，包含多种随机策略
 - [`stdutil`](./stdutil) 提供一些常用的 std util 函数。
 - [`stringutil`](./strutil) string 相关操作的函数工具包. eg: bytes, check, convert, encode, format and more
 - [`timeutil`](./timeutil) 提供增强的 time.Time 实现，添加更多常用的功能方法。
