@@ -2,7 +2,7 @@ package maputil
 
 import (
 	"errors"
-	"github.com/bychannel/goutils/stringutil"
+	"github.com/bychannel/goutils/strutil"
 	"reflect"
 	"strings"
 )
@@ -11,7 +11,7 @@ import (
 func HttpQueryString(data map[string]interface{}) string {
 	ss := make([]string, 0, len(data))
 	for k, v := range data {
-		ss = append(ss, k+"="+stringutil.QuietString(v))
+		ss = append(ss, k+"="+strutil.QuietString(v))
 	}
 
 	return strings.Join(ss, "&")

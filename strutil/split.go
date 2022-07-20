@@ -1,4 +1,4 @@
-package stringutil
+package strutil
 
 // Substr for a string.
 // if length <= 0, return pos to end.

@@ -1,9 +1,9 @@
-package stringutil
+package strutil
 
 // ByteChanPool struct
 //
 // Usage:
-//	bp := stringutil.NewByteChanPool(500, 1024, 1024)
+//	bp := strutil.NewByteChanPool(500, 1024, 1024)
 // 	buf:=bp.Get()
 // 	defer bp.Put(buf)
 //	// use buf do something ...
