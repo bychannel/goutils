@@ -1,26 +1,51 @@
 package netutil
 
 import (
+	"errors"
 	"net"
 )
 
-// InternalIP get internal IP
-func InternalIP() (ip string) {
+// LocalIP get internal IP
+func LocalIP() (string, error) {
 	addrs, err := net.InterfaceAddrs()
-	if err != nil {
-		panic("Oops: " + err.Error())
+
+	if nil != err {
+		return "", err
 	}
 
-	for _, a := range addrs {
-		if ipNet, ok := a.(*net.IPNet); ok && !ipNet.IP.IsLoopback() {
-			if ipNet.IP.To4() != nil {
-				// os.Stdout.WriteString(ipNet.IP.String() + "\n")
-				ip = ipNet.IP.String()
-				return
+	for _, address := range addrs {
+		if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if nil != ipnet.IP.To4() {
+				return ipnet.IP.String(), nil
 			}
 		}
 	}
 
-	// os.Exit(0)
-	return
+	return "", errors.New("can't get local IP")
+}
+
+// LocalMac get mac address
+func LocalMac() (string, error) {
+	interfaces, err := net.Interfaces()
+	if err != nil {
+		return "", err
+	}
+
+	for _, inter := range interfaces {
+		address, err := inter.Addrs()
+		if err != nil {
+			return "", err
+		}
+
+		for _, address := range address {
+			// check the address type and if it is not a loopback the display it
+			if ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+				if ipnet.IP.To4() != nil {
+					return inter.HardwareAddr.String(), nil
+				}
+			}
+		}
+	}
+
+	return "", errors.New("can't get local mac")
 }

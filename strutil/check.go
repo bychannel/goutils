@@ -15,12 +15,10 @@ func IsAlphabet(char uint8) bool {
 	if char >= 'A' && char <= 'Z' {
 		return true
 	}
-
 	// a 97 -> z 122
 	if char >= 'a' && char <= 'z' {
 		return true
 	}
-
 	return false
 }
 
